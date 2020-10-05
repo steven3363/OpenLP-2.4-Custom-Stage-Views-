@@ -1,5 +1,5 @@
 # OpenLP-Custom-Stage-Views
-A collection of Custom Stage views
+A collection of Custom Stage views for OpenLP 2.4
 
 # Installation instructions
 
