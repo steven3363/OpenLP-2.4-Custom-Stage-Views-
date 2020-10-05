@@ -17,16 +17,16 @@ EG: If you want to view the lower third you would point to the following link.
 Check out these videos for detailed installation. 
 
 
-1st Realese
+1st Release
 Just a lowerthird
 https://youtu.be/WHae90q2Ztg
 
 
-2nd Realease
+2nd Release
 Bible views and chords
 https://youtu.be/T3imz_jxXog
 
-3rd Realease
+3rd Release
 Video Background
 https://youtu.be/6Qc6-TaQBmw
 
