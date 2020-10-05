@@ -1,0 +1,48 @@
+/******************************************************************************
+* OpenLP - Open Source Lyrics
+
+To create a simple transparent stage view. 
+ 
+
+*/
+
+body {
+  
+  font-family: sans-serif;
+  
+}
+
+/* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+#currentslide {
+  
+  
+  position: fixed; 
+  top: 70%; 
+  height: 30%; 
+  width: 100%;
+  font-size: 7.25vh;
+  color: white;
+  text-shadow: 2px 2px grey;
+  
+  padding: 1rem;
+  text-align: center;   
+ 
+}
+
+#nextslide {
+
+	visibility: colapse; 
+	display: none
+}
+
+
+
+
+

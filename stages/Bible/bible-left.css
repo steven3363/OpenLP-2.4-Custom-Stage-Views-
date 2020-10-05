@@ -1,0 +1,88 @@
+/******************************************************************************
+* OpenLP - Open Source Lyrics
+
+To create a simple transparent stage view. 
+ /******************************************************************************
+* OpenLP - Open Source Lyrics
+
+This view is for the bible left-third 
+ 
+
+*/
+ 
+body {
+/* Font usage - you can use any font installed in your system or configured in the OPenLP fonts folder. 
+	by default the following 
+  	font-family: Aleo-Bold;
+ */ 
+  
+}
+
+
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 0.5%;
+  
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+#songtitle { 
+	/*display: absolute;
+	#right:0%;*/
+	font-size:1.8vw; 
+	text-decoration:underline; 
+	color: white;
+  	text-shadow: 2px 2px 4px grey;
+    	padding: 0.5%;
+  	
+}
+
+#currentslide {
+  
+  /*Change the font size here leave the vh as it makes it propotional. Make minor changes*/
+  font-size: 2.4vh;
+  
+  /* Change the colour here for the fill colour. can be most basic colours or use rgb
+  	eg. black = #000000
+  
+  color: white;
+  
+  Shadow type
+  Standard Shadow
+  	text-shadow: 2px 2px grey;
+  Standard Shadow - blur 
+  	text-shadow: 2px 2px 4px grey;
+  Standard Shadow - with black outline - uncomment to use 
+  	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, 2px 2px 4px grey;
+  Outline -
+  	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  check : https://www.w3schools.com/css/css3_shadows.asp
+  for more examples
+  
+  text-shadow: 2px 2px grey;
+  */
+  
+  
+  padding: 0.5%;
+  vertical-align:top;   
+}
+
+
+#nextslide {
+
+	visibility: colapse; 
+	display: none
+}
+
+
+

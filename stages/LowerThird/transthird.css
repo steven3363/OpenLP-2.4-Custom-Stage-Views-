@@ -1,0 +1,41 @@
+/******************************************************************************
+* OpenLP - Open Source Lyrics
+
+To create a simple transparent stage view. 
+ 
+
+*/
+
+body {
+ /* Font usage - you can use any font installed in your system or configured in the OPenLP fonts folder. 
+	by default the following 
+  	font-family: Aleo-Bold;
+ */ 
+}
+
+#currentslide {
+  
+  
+  position: fixed; 
+  top: 70%; 
+  height: 30%; 
+  width: 100%;
+  
+  
+  
+  
+  padding: 1rem;
+  text-align: center;   
+ 
+}
+
+#nextslide {
+
+	visibility: colapse; 
+	display: none
+}
+
+
+
+
+

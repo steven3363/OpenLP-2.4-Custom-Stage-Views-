@@ -1,0 +1,66 @@
+/******************************************************************************
+* OpenLP - Open Source Lyrics
+
+To create a simple transparent stage view. 
+ 
+
+*/
+
+body {
+  
+  font-family: Aleo-Bold;
+  
+}
+
+/* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+#currentslide {
+  
+  position:absolute;
+  
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  
+    /*Change the font size here leave the vh as it makes it propotional. Make minor changes*/
+  font-size: 7.25vh;
+  
+  /* Change the colour here for the fill colour. can be most basic colours or use rgb
+  	eg. black = #000000
+  */
+  color: white;
+  
+  /*Shadow type
+  Standard Shadow 
+  	text-shadow: 2px 2px 4px grey;
+  /*Standard Shadow - with black outline - uncomment to use 
+  	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, 2px 2px 4px #000000;
+  check : https://www.w3schools.com/css/css3_shadows.asp
+  for more examples
+  */
+  
+  
+  text-shadow: 2px 2px 4px black;
+  
+  padding: 1rem;
+  text-align: center;   
+ 
+}
+
+#nextslide {
+
+	visibility: colapse; 
+	display: none
+}
+
+
+
+
+
