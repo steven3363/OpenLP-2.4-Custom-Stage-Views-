@@ -3,18 +3,20 @@ This is the global setup for the custom stage views, to overide these settings e
 */
 body {
   background-color:transparent;
-  /* Font usage - you can use any font installed in your system or configured in the OPenLP fonts folder. 
+  /* Font usage - you can use any font installed in your system or configured in the OpenLP fonts folder. 
 	*/  
-  
-  
   
   font-family: Aleo-Bold;
   
 }
-
+#songtitle { 
+	text-decoration:underline; 
+	color: white;
+  	text-shadow: 2px 2px 2px grey;
+    	
+  	
+}
 #currentslide {
-/*Change the font size here leave the vh as it makes it propotional. Make minor changes*/
-  font-size: 7.25vh;
   
   /* Change the colour here for the fill colour. can be most basic colours or use rgb
   	eg. black = #000000
@@ -33,6 +35,7 @@ body {
   */
   
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, 2px 2px 4px grey;
+ 
    
 }
 
@@ -98,7 +101,25 @@ body {
   		
 	} 
 	
+@font-face {
+		font-family: Antonio-Bold;
+		src: url(Antonio-Bold.ttf);
+		font-weight: bold; 
+  		
+	} 
+	
+@font-face {
+		font-family: Antonio-Light;
+		src: url(Antonio-Light.ttf);
+		  		
+	} 
 
+@font-face {
+		font-family: Antonio-Regular;
+		src: url(Antonio-Regular.ttf);
+	}		  		
+		
+	
 
 		  
 

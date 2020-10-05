@@ -7,7 +7,7 @@ This view is for the bible right-third
 */
 
 body {
-  /* Font usage - you can use any font installed in your system or configured in the OPenLP fonts folder. 
+  /* Font usage - you can use any font installed in your system or configured in the OpenLP fonts folder. 
 	by default the following 
   	font-family: Aleo-Bold;
  */ 
@@ -31,14 +31,21 @@ body {
 
 
 #songtitle { 
-	/*display: absolute;
-	#right:0%;*/
+	
+	/* Global settings you can copy and change.
+  	text-decoration:underline; 
+	color: white;
+  	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, 2px 2px 4px grey;
+    	*/
+	
 	font-size:1.8vw; 
 	text-decoration:underline; 
-	color: white;
-  	text-shadow: 2px 2px 2px grey;
-    	padding: 0.5%;
+	padding: 0.5%;
   	text-align: right;
+  	
+  	
+  	
+  	
 }
 
 #currentslide {
@@ -48,30 +55,19 @@ body {
  
  /*Change the font size here leave the vw/vh as it makes it propotional. Make minor changes 2.4.vw */
   font-size: 2.4vh;
-  
-  /* Change the colour here for the fill colour. can be most basic colours or use rgb
-  	eg. black = #000000
-  
+ 
+/* Global Settings copy and change if you like
   color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, 2px 2px 4px #000000;
   
-  /*Shadow type
-  Standard Shadow Sharp
-  	text-shadow: 2px 2px grey;
-  Standard Shadow Blur
-  	text-shadow: 2px 2px 4px grey;
-  /*Standard Shadow - with black outline - uncomment to use 
-  	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, 2px 2px 4px #000000;
-  check : https://www.w3schools.com/css/css3_shadows.asp
-  for more examples
  */
-  
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, 2px 2px 2px grey;
-  
  
   
   padding: 0.5%;
   text-align: right;
   vertical-align:top;   
+  
+  
 }
 
 
