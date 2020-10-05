@@ -33,7 +33,9 @@ https://youtu.be/6Qc6-TaQBmw
 4th Realese
 Improved editing features
 
+The Chords code was taken from  
 
+https://github.com/tomasss1024/openlp_chords - Thank you!
 
 
 
