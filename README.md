@@ -36,6 +36,9 @@ Improved editing features
 
 5th Realse
 Added OBS Websoket connection
+Websocket Component from 
+https://github.com/haganbmj/obs-websocket-js
+
 
 The Chords code was taken from  
 
