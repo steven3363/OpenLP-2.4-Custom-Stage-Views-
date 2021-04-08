@@ -1,5 +1,6 @@
 # OpenLP-Custom-Stage-Views
 A collection of Custom Stage views for OpenLP 2.4
+Also Updated to add and OBS websocket connection - Changes scenes and hides display to match OpenLP
 
 # Installation instructions
 
@@ -33,9 +34,16 @@ https://youtu.be/6Qc6-TaQBmw
 4th Realese
 Improved editing features
 
+5th Realse
+Added OBS Websoket connection
+
 The Chords code was taken from  
 
 https://github.com/tomasss1024/openlp_chords - Thank you!
+
+OBS Websockets taken from a community member here
+https://forums.openlp.org/discussion/5336/tutorial-how-to-control-obs-via-openlp-custom-stage-view
+
 
 
 
