@@ -27,6 +27,8 @@ window.OpenLP = {
             // inserted for OBS control, I want to be able to read out the information
             OpenLP.currentTitle = data.results.items[idx]["title"];
             OpenLP.currentNotes = data.results.items[idx]["notes"];
+            //OpenLP.currentText = data.results.items[idx]["text"];//better for hidden text
+            //alert(OpenLP.currentTextm);
             OpenLP.currentPlugin = data.results.items[idx]["plugin"];
             // see CSS file
             $("#currentslide").attr("data-plugin", OpenLP.currentPlugin);
@@ -94,6 +96,8 @@ window.OpenLP = {
         }
         else if (OpenLP.currentSlide != data.results.slide) {
           OpenLP.currentSlide = parseInt(data.results.slide, 10);
+          var obsslide = OpenLP.currentSlides[OpenLP.currentSlide];
+	  OpenLP.currentText = obsslide["text"];
           OpenLP.updateSlide();
         }
        //inserted for being able to control OBS by display style
@@ -111,6 +115,7 @@ window.OpenLP = {
           OpenLP.currentlyShowing = "slides";
         }
         
+        //get text of slide
         OpenLP.obsRemote();
       }
     );
@@ -133,6 +138,10 @@ window.OpenLP = {
 
     obs-websocket controls can be found at:
     https://github.com/Palakis/obs-websocket/blob/4.x-current/docs/generated/protocol.md
+    
+    This Code was modified from 
+    https://forums.openlp.org/discussion/5336/tutorial-how-to-control-obs-via-openlp-custom-stage-view
+    Thank you - 
     */
 
    	obs = new OBSWebSocket();
@@ -172,6 +181,11 @@ window.OpenLP = {
 	cussource="source-Name";
 
 
+	//Add here extra scenes triggered in the text of a slide. Give a unique name
+	//wor2scene="worship2";
+	//wor2source="openlplower";
+	
+
 	//Do not edit bellow -only incomment as needed
 	
 	cursource = songsource;
@@ -183,33 +197,47 @@ window.OpenLP = {
 		sceneset = false;
 		
 				
-		//set visable state of all
+		//set visable state of all based on weather OpenLP is showing a slide or not
 		obs.send('SetSceneItemProperties', {'scene-name': songscene , 'item': songsource, 'visible': (OpenLP.currentlyShowing == "slides")});
 		obs.send('SetSceneItemProperties', {'scene-name': bibscene , 'item': bibsource, 'visible': (OpenLP.currentlyShowing == "slides")});
+	
+		
 		//uncomment if you are using
 //		obs.send('SetSceneItemProperties', {'scene-name': presscene , 'item': pressource, 'visible': (OpenLP.currentlyShowing == "slides")});
 //		obs.send('SetSceneItemProperties', {'scene-name': medscene , 'item': medsource, 'visible': (OpenLP.currentlyShowing == "slides")});		
 //		obs.send('SetSceneItemProperties', {'scene-name': imgscene , 'item': imgsource, 'visible': (OpenLP.currentlyShowing == "slides")});
 //		obs.send('SetSceneItemProperties', {'scene-name': cusscene , 'item': cussource, 'visible': (OpenLP.currentlyShowing == "slides")});
+
+//Extra scenes set visable -- one for each
+		//obs.send('SetSceneItemProperties', {'scene-name': wor2scene , 'item': wor2source, 'visible': (OpenLP.currentlyShowing == "slides")});
+
+
+
+		//get text of slide
+		var obsslide = OpenLP.currentSlides[OpenLP.currentSlide];
+		curText = obsslide["text"];
 		
-      		// Example 1a: use an item with the title "scenechange:altar" to switch to OBS scene "altar"
+      		// use an item with the title "scenechange:replacethiswithscenename" to switch to OBS scene "replacethiswithscenename"
 		if(preg = /scenechange:(.+)/i.exec(OpenLP.currentTitle)) {
 		        obs.send('SetCurrentScene', {'scene-name': preg[1]});
 		        sceneset = true;
 		}
-	      	// Example 1b: put "scenechange:altar" into the notes of an item
+	      	// put "scenechange:replacethiswithscenename" into the notes of an item
 		if(preg = /scenechange:(.+)/i.exec(OpenLP.currentNotes)) {
 			obs.send('SetCurrentScene', {'scene-name': preg[1]});
 			sceneset = true;
 		}
 		
-		
-		
-		
-      		// Example 2: toggle visibility of OBS scene item "lyrics",
-		// depending on if the slide your showing is a song or not
-		//OpenLP.obsHandler.send('SetSceneItemProperties', {'scene-name': curscene , 'item': cursource , 'visible': (OpenLP.currentPlugin == "songs")});
-      
+		//Need a condition - only for songs
+		//if (OpenLP.currentPlugin == "songs") {
+		//	// put "scenechange:replacethiswithscenename" into the slide of an item (Wrap in a tag to hide)
+		//	if (preg = /scenechange:(.+)/i.exec(OpenLP.currentText)) {
+		//		obs.send('SetCurrentScene', {'scene-name': preg[1]});
+		//		curscene = preg[1];
+		//		sceneset = true;
+		//	}			
+      		//}
+      			    
 		//The following will change scenes based on the type of slide
 		// Other plugin names are as follows : images, presentations, media, custom
      
@@ -272,12 +300,12 @@ window.OpenLP = {
          obs.send('SetCurrentScene', {'scene-name': newscene});
     //make source visable
          //obs.send('SetSceneItemProperties', {'scene-name': newscene , 'item': cursource , 'visible': true} );
-         //alert(OpenLP.currentlyShowing);
-         obs.send('SetSceneItemProperties', {'item': songsource, 'visible': (OpenLP.currentlyShowing == "slides")});
+         //Make sure we show the slide in obs
+         //obs.send('SetSceneItemProperties', {'item': cursource, 'visible': (OpenLP.currentlyShowing == "slides")});
          }
     });
   }
 }
 $.ajaxSetup({ cache: false });
-setInterval("OpenLP.pollServer();", 500);
+setInterval("OpenLP.pollServer();", 750);
 OpenLP.pollServer();
