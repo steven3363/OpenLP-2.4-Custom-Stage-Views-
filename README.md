@@ -4,7 +4,7 @@ Also Updated to add and OBS websocket connection - Changes scenes and hides disp
 
 # Installation instructions
 
-Download the stage folder above and copy it to the data folder of your OpenLP folder. 
+Download the 'stages' folder above and copy it to the data folder of your OpenLP folder. Please include all the files.
 
 Insure the 'Remote Plugin' is enabled. 
 
