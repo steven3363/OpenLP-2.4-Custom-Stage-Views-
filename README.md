@@ -1,4 +1,4 @@
-# OpenLP-Custom-Stage-Views
+# OpenLP-Custom-Stage-Views - 2.4
 A collection of Custom Stage views for OpenLP 2.4
 Also Updated to add and OBS websocket connection - Changes scenes and hides display to match OpenLP
 
